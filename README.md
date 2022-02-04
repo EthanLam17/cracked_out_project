@@ -31,6 +31,7 @@ In addition, this project will include:
 # Technologies, Libraries, APIs
 
 - This project will be implemented with the following technologies: 
+    + HTML, CSS, Javascript for the base of the web application
     + Canvas to render objects in the application
     + Use three.js to create the first person view point and user to target perspective
 
