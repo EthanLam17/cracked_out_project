@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --watch --mode=development",
     "build": "webpack --mode=production"
-    },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EthanLam17/javascript_project.git"
@@ -28,6 +28,7 @@
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.49.7",
     "sass-loader": "^12.4.0",
+    "three": "^0.137.5",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2"
   }
