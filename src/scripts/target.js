@@ -1,29 +1,26 @@
 import * as THREE from 'three';
 
-export default function target() {
+const POSITIONS = {
+    x: Math.floor(Math.random() * 13 - 6),
+    y: Math.floor(Math.random() * 4),
+    z: Math.floor(Math.random() * 7 - 5)
+}
+export default class Target {
+    constructor() {
+        // this.x = POSITIONS.x;
+        // this.y = POSITIONS.y;
+        // this.z = POSITIONS.z;
 
-    const scene = new THREE.Scene();
+        const orb_geometry = new THREE.SphereGeometry(.5, 32, 16);
+        const orb_material = new THREE.MeshBasicMaterial( {color:0x98FB98});
+        const orb = new THREE.Mesh(orb_geometry, orb_material);
+        orb.position.x += POSITIONS.x;
+        orb.position.y += POSITIONS.y;
+        orb.position.z += POSITIONS.z;
 
-    // const orb_geometry = new THREE.SphereGeometry(.5, 32, 16);
-    // const orb_material = new THREE.MeshBasicMaterial( {color:0x98FB98});
-    // const orb = new THREE.Mesh(orb_geometry, orb_material);
-    // scene.add(orb);
+    }
 
-    // function animate() {
-    //     requestAnimationFrame (animate);
-
-    //     renderer.render(scene);
-
+    // createTarget() {
     // }
-    // animate()
-    // const POSITIONS = 
-    // X positions between: -6 and 6;
-    // y positions between: 0 and 3
-    // Z positions between: -5 and 1
 
-    // const geometry = new THREE.SphereGeometry(3, 10, 10);
-    // const material = new THREE.MeshBasicMaterial( {color:0x98FB98});
-    // const orb = new THREE.Mesh(geometry, material);
-
-    // scene.add( cube );
 }
