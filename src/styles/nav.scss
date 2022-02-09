@@ -1,0 +1,33 @@
+
+    nav {
+        background-color: black;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 50px;
+        margin: 0;
+        width: 100%;
+    }
+
+    img {
+        height: 45px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .links {
+        display: flex;
+    }
+
+    #score {
+        font-weight: 100;
+        font-size: 42px;
+        color: white;
+        background-color: black;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Rowdies', cursive;
+    }

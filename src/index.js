@@ -2,27 +2,29 @@ import * as THREE from 'three';
 import Target from '../src/scripts/target';
 import Stats from './scripts/stats'
 
-    const openModalButton = document.getElementById('start-button');
-    const closeModalButton = document.querySelector('[data-play-button]');
+    // const openModalButton = document.getElementById('start-button');
+    const closeModalButton = document.getElementById('play-button');
     const overlay = document.getElementById('overlay');
 
-    openModalButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        debugger;
-        const modal = document.getElementById('start-modal');
-        debugger;
-        openModal(modal);
-    });
-  
+    // openModalButton.addEventListener('click', (e) => {
+    //     debugger
+    //     e.preventDefault();
+    //     debugger;
+    //     const modal = document.getElementById('start-modal');
+    //     debugger;
+    //     openModal(modal);
+    // });
+    
     closeModalButton.addEventListener('click', () => {
         const modal = document.getElementById('start-modal');
         closeModal(modal);
     });
 
-    function openModal(modal) {
-        modal.classList.add('active')
-        overlay.classList.add('active')
-    }
+    // function openModal(modal) {
+    //     debugger
+    //     modal.classList.add('active')
+    //     overlay.classList.add('active')
+    // }
 
     function closeModal(modal) {
         modal.classList.remove('active')
@@ -34,28 +36,36 @@ import Stats from './scripts/stats'
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.z = 7;
-        const renderer = new THREE.WebGLRenderer({alpha:true});
+        const renderer = new THREE.WebGLRenderer;
+            const texture = new THREE.TextureLoader().load( "." );
+            texture.wrapS = THREE.RepeatWrapping;
+            texture.wrapT = THREE.RepeatWrapping;
+            texture.repeat.set( 4, 4 );
         renderer.domElement.id = "render";
         const mouse = new THREE.Vector2();
         const target = new THREE.Vector2();
         const windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );  
-        const finish = 5;
-        const light = new THREE.HemisphereLight( 0xbc544b, 0x080820, 20 );
-        scene.add( light );
+        const finish = 2;
         let pointer = new THREE.Vector2();
         let raycaster = new THREE.Raycaster();
         let stats = new Stats;
-        
-        // renderer.setClearColor(0x455a64, 0.5)
-        renderer.setClearColor(0xffffff, 0)
+        renderer.setClearColor(0xfaf0e6, 0.9)
+        // renderer.setClearColor(0xffffff, 0)
         renderer.setSize(window.innerWidth * 0.95, window.innerHeight * 0.93);
         document.body.appendChild(renderer.domElement);
         
         
+        // const meshFloor = new THREE.Mesh(
+        //     new THREE.PlaneGeometry(20, 15, 6, 6),
+        //     new THREE.MeshBasicMaterial({color:0xC19A6B, wireframe:false})
+            // );
         const meshFloor = new THREE.Mesh(
             new THREE.PlaneGeometry(20, 15, 6, 6),
-            new THREE.MeshBasicMaterial({color:0xC19A6B, wireframe:false})
+            new THREE.MeshStandardMaterial({color: "#000", transparent: true})
+            // new THREE.MeshBasicMaterial({color:0xC19A6B, wireframe:false})
             );
+            let alphamap = new THREE.TextureLoader().load('./textures/tile1.jpg');
+            meshFloor.material.alphaMap = alphamap;
             meshFloor.rotation.x += -1.5;
             meshFloor.position.y -= 1;
             scene.add(meshFloor);
@@ -85,11 +95,11 @@ import Stats from './scripts/stats'
                 raycaster.setFromCamera(pointer, camera);
                 let intersects = raycaster.intersectObjects(scene.children);
                 if (intersects.length > 0 && intersects[0].object.userData === "target") {
-                    scene.remove(intersects[0].object);
+                    scene.remove(intersects[0].object)
                     createTarget();
                     stats.hit += 1;
                     stats.total += 1;
-                    document.getElementById('score').innerHTML = "Hits: " + stats.hit;
+                    document.getElementById('score').innerHTML = "SCORE " + stats.hit;
                     if (stats.hit === finish) {
                         const gameover = document.getElementById('results')
                         gameover.classList.add('active');
@@ -111,12 +121,17 @@ import Stats from './scripts/stats'
             function animate() {
                 requestAnimationFrame (animate);
                 
+                let time = 0;
+                time++;
+
                 target.x = ( 1 - mouse.x ) * 0.0015;
                 target.y = ( 1 - mouse.y ) * 0.0015;
                 
                 camera.rotation.x += 0.02 + ( target.y - camera.rotation.x );
                 camera.rotation.y += 0.02 + ( target.x - camera.rotation.y );
             
+                // scene.children[1].material.alphaMap.offset.y = time * 0.5
+
                 renderer.render(scene, camera);
             }
         animate();

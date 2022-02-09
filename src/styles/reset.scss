@@ -1,0 +1,30 @@
+
+body, div, p, ul, li{
+  margin: 0;
+  padding: 0; 
+  border: 0;
+  list-style-type: none;
+}
+  
+  body {
+    background-color: black;
+  }
+
+  * {
+    background-color: inherit;
+    color: inherit;
+    margin: 0; 
+    padding: 0;
+  }
+
+p {
+  color: red;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -7,42 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Syne+Tactile&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rowdies:wght@300;400&family=Syne+Tactile&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
     <title>Javascript Project</title>
 </head>
 
 <body>
-    <div class="hud">
-        <div>
-            <p>Aim Down</p>
-            <p id="score">Score: 0</p>
+    <nav id="nav">
+        <div id="score">SCORE 0</div>
+        <!-- <button id="start-button">Directions</button> -->
+        <div class="links">
+            <a href="https://www.linkedin.com/in/ethanlam0123/" target="_blank">
+                <img src="./textures/white_linkedin.jpg" alt="linkedin icon">
+            </a>
+            <a href="https://github.com/EthanLam17/javascript_project" target="_blank">
+                <img src="./textures/white_github.png" alt="github icon">
+            </a>
         </div>
-        <button id="start-button">Directions</button>
-    </div>
+    </nav>
  
     <div class="start-modal active" id="start-modal">
         <div class="modal-header">
-            <div class="title">Game Directions</div>
+            <div id="title">Cracked out</div>
         </div>
+    
         <div class="modal-body">
-          Hit the target to delete it! 
-          <br>
-          Get your accuracy report after you delete the target 
+            <ul><h3>Directions</h3>
+                <li>Using the cursor, hit 10 targets to win!</li>
+                <li>You'll recieve your accuracy report after the game is complete!</li>
+            </ul>
         </div>
-        <button data-play-button class="play-button">PLAY</button>
+
+        <button data-play-button id="play-button">PLAY</button>
     </div>
 
     <div class="end-modal" id="results">
-        <div id="end-modal-header">Results</div>
-        <div id="end-modal-body">
+        <div class="modal-header">Results</div>
+        <div class="modal-body">
             <div class="stat" id="hits"></div>
             <div class="stat" id="misses"></div>
             <div class="stat" id="percent"></div>
         </div>
+        <button id="refresh" onclick="window.location.reload()">Play Again</button>
     </div>
 
     <div class="active" id="overlay">
+        <script type="module" src="./dist/main.js"></script>
     </div>
-    <script type="module" src="./dist/main.js"></script>
 
 </body>
 

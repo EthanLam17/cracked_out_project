@@ -1,13 +1,23 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+body, div, p, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style-type: none;
+}
 
-  * {
-    background-color: transparent;
-    color: black;
-    margin: 0; 
-    padding: 0;
-  }
+body {
+  background-color: black;
+}
+
+* {
+  background-color: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
 
 p {
   color: red;
@@ -20,10 +30,27 @@ body {
   align-items: center;
 }
 
-.hud {
-  display: flex;
+ul, li {
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+h3 {
+  font-family: "Rowdies", cursive;
+  font-size: 30px;
+}
+
+button {
+  width: 100%;
+  border-radius: 15px;
   height: 50px;
-  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-family: "Rowdies", cursive;
+  font-family: "Syne Tactile", cursive;
+  font-weight: 700;
+  font-size: 27px;
+  background-color: #e64044;
 }
 
 .start-modal, .end-modal {
@@ -32,48 +59,102 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  transition: 200ms ease-in-out;
+  transition: 500ms ease-in-out;
   border: 1px solid black;
   border-radius: 15px;
   z-index: 10;
-  background-color: white;
-  width: 500px;
-  max-width: 80%
+  background-color: #F5F5DC;
+  height: 400;
+  width: 400px;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .modal-header {
-  padding: 10px 15px;
   display: flex;
+  align-items: center;
   justify-content: center;
   border-bottom: 2px solid black;
+  height: 20%;
+  font-family: "Roboto", sans-serif;
+  font-family: "Syne Tactile", cursive;
+  font-weight: 700;
+  font-size: 70px;
 }
 
 .modal-header .title {
-  font-size: 20px;
+  font-size: 50px;
   font-weight: bold;
 }
 
 .modal-body {
   padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-items: center;
+  align-content: center;
 }
 
 #overlay {
   position: fixed;
   transition: 200ms ease-in-out;
   opacity: 0;
-  top: 0; 
-  left: 0; 
-  right: 0; 
+  top: 50px;
+  left: 0;
+  right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .start-modal.active, .end-modal.active {
   transform: translate(-50%, -50%) scale(1);
 }
 
+.stat {
+  font-family: "Quintessential", cursive;
+  font-size: 20px;
+}
+
 #overlay.active {
-  opacity: 1;
+  opacity: 0.5;
   pointer-events: all;
+}
+
+#refresh {
+  background-color: aquamarine;
+}
+
+nav {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  margin: 0;
+  width: 100%;
+}
+
+img {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.links {
+  display: flex;
+}
+
+#score {
+  font-weight: 100;
+  font-size: 42px;
+  color: white;
+  background-color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Roboto", sans-serif;
+  font-family: "Rowdies", cursive;
 }
