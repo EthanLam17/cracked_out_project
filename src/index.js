@@ -53,7 +53,9 @@ import Stats from './scripts/stats'
         // renderer.setClearColor(0xffffff, 0)
         renderer.setSize(window.innerWidth * 0.95, window.innerHeight * 0.93);
         document.body.appendChild(renderer.domElement);
-        
+        const loader = new THREE.TextureLoader();
+        const background = loader.load('./textures/bluebackground.jpg')
+        scene.background = background;
         
         // const meshFloor = new THREE.Mesh(
         //     new THREE.PlaneGeometry(20, 15, 6, 6),

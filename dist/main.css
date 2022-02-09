@@ -50,7 +50,12 @@ button {
   font-family: "Syne Tactile", cursive;
   font-weight: 700;
   font-size: 27px;
-  background-color: #e64044;
+  background-color: #7ec0ee;
+  transition: ease-out 0.2s;
+}
+
+button:hover {
+  box-shadow: inset 400px 0 0 0 #e1affd;
 }
 
 .start-modal, .end-modal {
@@ -123,7 +128,7 @@ button {
 }
 
 #refresh {
-  background-color: aquamarine;
+  background-color: #e64044;
 }
 
 nav {
