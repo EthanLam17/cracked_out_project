@@ -63,7 +63,7 @@ import Stats from './scripts/stats'
             // );
         const meshFloor = new THREE.Mesh(
             new THREE.PlaneGeometry(20, 15, 6, 6),
-            new THREE.MeshStandardMaterial({color: "#000", transparent: true})
+            new THREE.MeshStandardMaterial({color: "#FFF", transparent: true})
             // new THREE.MeshBasicMaterial({color:0xC19A6B, wireframe:false})
             );
             let alphamap = new THREE.TextureLoader().load('./textures/tile1.jpg');
