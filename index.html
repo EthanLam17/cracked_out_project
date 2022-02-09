@@ -11,14 +11,39 @@
 </head>
 
 <body>
-    <p>SCORE BOARD</p>
-    <script type="module" src="./dist/main.js"></script>
-    <div class="modal">
-        <div class="modal-context">
-            <p id="Title"></p>
-            <p id="Directions"></p>
+    <div class="hud">
+        <div>
+            <p>Aim Down</p>
+            <p id="score">Score: 0</p>
+        </div>
+        <button id="start-button">Directions</button>
+    </div>
+ 
+    <div class="start-modal active" id="start-modal">
+        <div class="modal-header">
+            <div class="title">Game Directions</div>
+        </div>
+        <div class="modal-body">
+          Hit the target to delete it! 
+          <br>
+          Get your accuracy report after you delete the target 
+        </div>
+        <button data-play-button class="play-button">PLAY</button>
+    </div>
+
+    <div class="end-modal" id="results">
+        <div id="end-modal-header">Results</div>
+        <div id="end-modal-body">
+            <div class="stat" id="hits"></div>
+            <div class="stat" id="misses"></div>
+            <div class="stat" id="percent"></div>
         </div>
     </div>
+
+    <div class="active" id="overlay">
+    </div>
+    <script type="module" src="./dist/main.js"></script>
+
 </body>
 
 </html>
