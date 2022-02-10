@@ -5,6 +5,9 @@ Wanting to improve your skills is universal, even gamers. Cracked Out provides m
 
 Before starting the game, read through the instructions, then select the number of targets you want to appear in your game. After starting the game, targets will continue to appear on the screen at random. A score counter updates as you successfully hit each target. After all of the targets are hit, the game ends, calculating how accurate your mouse skills are.
 
+Test your skills here! 
+https://ethanlam17.github.io/cracked_out_project/
+
 # Technologies, Libraries, APIs
 
 - This project implements the following technologies: 
