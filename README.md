@@ -3,7 +3,7 @@
 
 Wanting to improve your skills is universal, even gamers. Cracked Out provides mouse training for tactical shooter gamers in the form of a fun and interactive game. Hit all of the targets to receive a report of your accuracy, then keep playing the game to improve that number!
 
-After starting the game, targets will continue to appear on the screen at random. A score counter updates as you successfully hit each target. After 10 successful target hits, the game ends, calculating how accurate your mouse skills are.
+Before starting the game, read through the instructions, then select the number of targets you want to appear in your game. After starting the game, targets will continue to appear on the screen at random. A score counter updates as you successfully hit each target. After all of the targets are hit, the game ends, calculating how accurate your mouse skills are.
 
 # Technologies, Libraries, APIs
 
@@ -19,6 +19,7 @@ After starting the game, targets will continue to appear on the screen at random
 
 - In Cracked Out, users will be able to:
 
+    + Choose how many targets they want to play with
     + Start the game
     + Hit targets
     + Confirm target hit with score increase
@@ -31,9 +32,9 @@ After starting the game, targets will continue to appear on the screen at random
 
 
 # Game Snippets
-![Start](./textures/start.JPG)
-![Game Play](./textures/range.JPG)
-![Results](./textures/results.JPG)
+![Start](./images/start.JPG)
+![Game Play](./images/range.JPG)
+![Results](./images/results.JPG)
 
 
 # Technical Challenges
@@ -71,6 +72,6 @@ After starting the game, targets will continue to appear on the screen at random
 ```
 
 # Future Direction
-- Customization to allow user to adjust the number of targets that appear
-- Timer so that targets automatically removed if user does not it fast enough
-- Camera movement smoothening for higher quality gameplay 
+- Timer so that targets are automatically removed if user does not destroy it fast enough
+- Camera movement smoothening for higher quality gameplay
+
