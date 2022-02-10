@@ -1,31 +1,33 @@
 
-ul, li {
-  padding: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+h3 {
+  font-family: 'Cormorant', serif;
+  font-size: 50px;
+  font-weight: 700;
 }
 
-h3 {
-  font-family: 'Rowdies', cursive;
-  font-size: 30px;
+li {
+  padding: 10px;
+  font-size: 27px;
+  font-family: 'Cormorant', serif;
 }
+
 
 button {
   width: 100%;
   border-radius: 15px;
-  height: 50px;
+  height: 100px;
   font-family: 'Roboto', sans-serif;
   font-family: 'Rowdies', cursive;
   font-family: 'Syne Tactile', cursive;
   font-weight: 700;
-  font-size: 27px;
+  font-size: 40px;
   background-color: #7ec0ee;
   // background-color: #e64044;
-  transition: ease-out 0.2s;
+  transition: ease-out 0.4s;
 }
 
 button:hover {
-  box-shadow:inset 400px 0 0 0 #e1affd;
+  box-shadow:inset 600px 0 0 0 #e1affd;
 }
 
 
@@ -40,9 +42,9 @@ button:hover {
     border: 1px solid black;
     border-radius: 15px;
     z-index: 10;
-    background-color: #F5F5DC;
-    height: 400;
-    width: 400px;
+    background-color: #D5D5D5;
+    height: 700px;
+    width: 600px;
     max-width: 80%;
     display: flex;
     flex-direction: column;
@@ -57,26 +59,22 @@ button:hover {
     justify-content: center;
     border-bottom: 2px solid black;
     height: 20%;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Syne Tactile', cursive;
+    font-family: 'Orbitron', sans-serif;
+    // font-family: 'Supermercado One', cursive;
     font-weight: 700;
-    font-size: 70px;
-  }
-  
-  .modal-header .title {
     font-size: 50px;
-    font-weight: bold;
   }
   
   .modal-body {
     padding: 10px 15px;
+    margin: 100px 20px;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-items: center;
     align-content: center;
   }
-  
+
   #overlay {
     position: fixed;
     transition: 200ms ease-in-out;
@@ -94,7 +92,8 @@ button:hover {
 
   .stat {
     font-family: 'Quintessential', cursive;
-    font-size: 20px;
+    font-size: 33px;
+    font-weight: 500;
   }
   
   #overlay.active {

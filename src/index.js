@@ -37,15 +37,11 @@ import Stats from './scripts/stats'
         const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.z = 7;
         const renderer = new THREE.WebGLRenderer;
-            const texture = new THREE.TextureLoader().load( "." );
-            texture.wrapS = THREE.RepeatWrapping;
-            texture.wrapT = THREE.RepeatWrapping;
-            texture.repeat.set( 4, 4 );
         renderer.domElement.id = "render";
         const mouse = new THREE.Vector2();
         const target = new THREE.Vector2();
         const windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );  
-        const finish = 2;
+        const finish = 10;
         let pointer = new THREE.Vector2();
         let raycaster = new THREE.Raycaster();
         let stats = new Stats;
@@ -65,7 +61,7 @@ import Stats from './scripts/stats'
             new THREE.PlaneGeometry(20, 15, 6, 6),
             new THREE.MeshStandardMaterial({color: "#FFF", transparent: true})
             // new THREE.MeshBasicMaterial({color:0xC19A6B, wireframe:false})
-            );
+        );
             let alphamap = new THREE.TextureLoader().load('./textures/tile1.jpg');
             meshFloor.material.alphaMap = alphamap;
             meshFloor.rotation.x += -1.5;
@@ -122,9 +118,6 @@ import Stats from './scripts/stats'
 
             function animate() {
                 requestAnimationFrame (animate);
-                
-                let time = 0;
-                time++;
 
                 target.x = ( 1 - mouse.x ) * 0.0015;
                 target.y = ( 1 - mouse.y ) * 0.0015;
@@ -133,7 +126,6 @@ import Stats from './scripts/stats'
                 camera.rotation.y += 0.02 + ( target.x - camera.rotation.y );
             
                 // scene.children[1].material.alphaMap.offset.y = time * 0.5
-
                 renderer.render(scene, camera);
             }
         animate();
