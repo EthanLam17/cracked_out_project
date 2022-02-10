@@ -50,7 +50,7 @@ import Stats from './scripts/stats';
         renderer.setSize(window.innerWidth * 0.95, window.innerHeight * 0.93);
         document.body.appendChild(renderer.domElement);
         const loader = new THREE.TextureLoader();
-        const background = loader.load('./textures/bluebackground.jpg')
+        const background = loader.load('./images/bluebackground.jpg')
         scene.background = background;
         
         // const meshFloor = new THREE.Mesh(
@@ -62,7 +62,7 @@ import Stats from './scripts/stats';
             new THREE.MeshStandardMaterial({color: "#FFF", transparent: true})
             // new THREE.MeshBasicMaterial({color:0xC19A6B, wireframe:false})
         );
-            let alphamap = new THREE.TextureLoader().load('./textures/tile1.jpg');
+            let alphamap = new THREE.TextureLoader().load('./images/tile1.jpg');
             meshFloor.material.alphaMap = alphamap;
             meshFloor.rotation.x += -1.5;
             meshFloor.position.y -= 1;
