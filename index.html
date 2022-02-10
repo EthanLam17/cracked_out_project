@@ -41,10 +41,20 @@
     
         <div class="modal-body">
             <ul><h3>Directions</h3>
-                <li>Using the cursor, hit 10 targets to win!</li>
+                <li>Using the cursor, hit all of the targets to win!</li>
                 <li>You'll receive your accuracy report after the game is complete!</li>
             </ul>
+            <p id="target-select-label">Select number of Targets</p>
+    
+                <select name="targets" id="target-select">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                </select>
         </div>
+
+    
 
         <button data-play-button id="play-button">PLAY</button>
     </div>

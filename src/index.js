@@ -41,7 +41,8 @@ import Stats from './scripts/stats';
         const mouse = new THREE.Vector2();
         const target = new THREE.Vector2();
         const windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );  
-        const finish = 10;
+        const targetSelected = document.getElementById('target-select')
+        const finish = parseInt(targetSelected.options[targetSelected.selectedIndex].value);
         let pointer = new THREE.Vector2();
         let raycaster = new THREE.Raycaster();
         let stats = new Stats;
