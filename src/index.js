@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import Target from '../src/scripts/target';
-import Stats from './scripts/stats'
+import Stats from './scripts/stats';
 
     // const openModalButton = document.getElementById('start-button');
     const closeModalButton = document.getElementById('play-button');
@@ -45,7 +45,7 @@ import Stats from './scripts/stats'
         let pointer = new THREE.Vector2();
         let raycaster = new THREE.Raycaster();
         let stats = new Stats;
-        renderer.setClearColor(0xfaf0e6, 0.9)
+        renderer.setClearColor(0xfaf0e6, 0.9);
         // renderer.setClearColor(0xffffff, 0)
         renderer.setSize(window.innerWidth * 0.95, window.innerHeight * 0.93);
         document.body.appendChild(renderer.domElement);
@@ -70,7 +70,7 @@ import Stats from './scripts/stats'
 
             function createTarget() {
                 let object = new Target;
-                object.orb.userData = "target"
+                object.orb.userData = "target";
                 object.orb.position.x += Math.floor(Math.random() * 13 - 6);
                 object.orb.position.y += Math.floor(Math.random() * 4);
                 object.orb.position.z += Math.floor(Math.random() * 4 - 2);
@@ -79,8 +79,8 @@ import Stats from './scripts/stats'
             createTarget();
             
             function onMouseMove( event ) {
-                mouse.x = (event.clientX - (windowHalf.x))
-                mouse.y = (event.clientY - (windowHalf.y))
+                mouse.x = (event.clientX - (windowHalf.x));
+                mouse.y = (event.clientY - (windowHalf.y));
             }
             
             function onPointerMove(event) {
@@ -93,15 +93,15 @@ import Stats from './scripts/stats'
                 raycaster.setFromCamera(pointer, camera);
                 let intersects = raycaster.intersectObjects(scene.children);
                 if (intersects.length > 0 && intersects[0].object.userData === "target") {
-                    scene.remove(intersects[0].object)
+                    scene.remove(intersects[0].object);
                     createTarget();
                     stats.hit += 1;
                     stats.total += 1;
                     document.getElementById('score').innerHTML = "SCORE " + stats.hit;
                     if (stats.hit === finish) {
-                        const gameover = document.getElementById('results')
+                        const gameover = document.getElementById('results');
                         gameover.classList.add('active');
-                        overlay.classList.add('active')
+                        overlay.classList.add('active');
                         document.getElementById('hits').innerHTML = "You hit " + finish + " targets!";
                         document.getElementById('misses').innerHTML = "You missed " + (stats.miss - 1) + " times!";
                         document.getElementById('percent').innerHTML = "You have an accuracy of " + (stats.hit /(stats.total - 1) * 100).toFixed(2) + "%"; 
@@ -113,7 +113,7 @@ import Stats from './scripts/stats'
             };
             
             document.addEventListener( 'mousemove', onMouseMove, false );
-            document.addEventListener('mousemove', onPointerMove, false)
+            document.addEventListener('mousemove', onPointerMove, false);
             document.addEventListener('click', hitTarget);
 
             function animate() {

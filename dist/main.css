@@ -57,7 +57,7 @@ button {
 }
 
 button:hover {
-  box-shadow: inset 600px 0 0 0 #e1affd;
+  box-shadow: inset 600px 0 0 0 #90EE90;
 }
 
 .start-modal, .end-modal {

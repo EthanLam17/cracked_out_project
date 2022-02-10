@@ -30,22 +30,47 @@ After starting the game, targets will continue to appear on the screen at random
 
 
 
-# Wireframe
-![wireframe](./js_project_wireframe.JPG)
-- Nav links include links to this project's Github repository and my LinkedIn
-- Score shows the number of targets successfully hit, updated in real time
-- The Crosshair will be a lot smaller than shown in the wireframe
-- Toggle between easy/hard mode
-- Targets appear one by one, in any of the possible target elements shown
+# Game Snippets
+![Start](./textures/start.JPG)
+![Game Play](./textures/range.JPG)
+![Results](./textures/results.JPG)
 
 
-# Implementation Timeline
-- Friday Afternoon & Weekend: Setup project, including getting webpack up and running, set up three.js. Render first person view point. Start building components in the POV like hand/gun that remains static as mouse moves.
+# Technical Challenges
+- Challenge: 
+    + Creating the basic function of allowing a user to destroy a target proved challenging under the three.js environment. There are several ways to incorporate user interaction with objects however specifically destroying the target object while creating a new one at the same time without refreshing the screen seemed nearly impossible.
+    
+- Solution: 
+    + I had came across the topic of ray casting before and after trying various API's and library add-ons, I gave it a serious try. It allowed me to send a "signal" from the mouse click into the render and successfully delete the object as a user. Additionally, by adding userData to the target, I was able to specifically delete the target rather than any object in the render that I clicked on. 
 
-- Monday: Continue working on objects in camera frame(hand/gun). Start user functionality: interaction with targets. 
+```js
+    function hitTarget() {
+        raycaster.setFromCamera(pointer, camera);
+        let intersects = raycaster.intersectObjects(scene.children);
+        if (intersects.length > 0 && intersects[0].object.userData === "target") {
+            scene.remove(intersects[0].object)
+            createTarget();
+            stats.hit += 1;
+            stats.total += 1;
+            document.getElementById('score').innerHTML = "SCORE " + stats.hit;
+            if (stats.hit === finish) {
+                const gameover = document.getElementById('results')
+                gameover.classList.add('active');
+                overlay.classList.add('active')
+                document.getElementById('hits').innerHTML = "You hit " + finish + " targets!";
+                document.getElementById('misses').innerHTML = "You missed " + (stats.miss - 1) + " times!";
+                document.getElementById('percent').innerHTML = "You have an accuracy of " + (stats.hit /(stats.total - 1) * 100).toFixed(2) + "%"; 
+            }
+        } else {
+            stats.miss += 1;
+            stats.total += 1;
+        };
+    };
 
-- Tuesday: Continue work on functionality. Start menu overlay and gameover/results overlay.
+    document.addEventListener('click', hitTarget);
+```
 
-- Wednesday: Finalize functions/pages. Work on customization/design.
-
-- Thursday Morning: Deploy project to GitHub Pages/Heroku
+# Future Direction
+- Customization to allow user to adjust the number of targets that appear
+- Timer so that targets automatically removed if user does not it fast enough
+- Camera movement smoothening for higher quality gameplay 
