@@ -8,7 +8,7 @@ Before starting the game, read through the instructions, then select the number 
 Test your skills <a href="https://ethanlam17.github.io/cracked_out_project" target="_blank">here!</a>
 
 
-# Technologies, Libraries, APIs
+# Technologies
 
 - This project implements the following technologies: 
 
@@ -16,22 +16,6 @@ Test your skills <a href="https://ethanlam17.github.io/cracked_out_project" targ
     + Three.js to render the environment, first person point of view and target objects. 
         - WebGL is used in Three.js' underlying system
     + WebPack to bundle the Javascript and CSS
-
-
-# Functionality & MVPs
-
-- In Cracked Out, users will be able to:
-
-    + Choose how many targets they want to play with
-    + Start the game
-    + Hit targets
-    + Confirm target hit with score increase
-
-
-- In addition, this project will include:
-    + Instructions about the game
-    + A results page, analyzing user performance after the round is over
-
 
 
 # Game Snippets
