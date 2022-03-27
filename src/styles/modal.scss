@@ -32,6 +32,7 @@ option {
 button:hover {
   // box-shadow:inset 600px 0 0 0 #e1affd;
   box-shadow:inset 600px 0 0 0 #90EE90;
+  cursor: pointer;
 }
 
 .start-modal, .end-modal {
@@ -93,12 +94,15 @@ button:hover {
     border-radius: 15px;
     padding: 8px, 12px;
     border: 2px solid #A29A98;
-    cursor: crosshair;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     text-align: center;
     font-size: 24px;
+  }
+
+  #target-select:hover, #target-select > option:hover{
+    cursor: pointer;
   }
 
 
